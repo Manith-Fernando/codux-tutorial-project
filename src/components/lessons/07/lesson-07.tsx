@@ -86,42 +86,42 @@ export const Lesson07 = () => {
                     color={getColor(1)}
                     icon="arrow"
                     className={styles.icon}
-                    iconDirection="right"
+                    iconDirection="down"
                 />
                 <Box
                     outlined
                     color={getColor(2)}
                     icon="arrow"
                     className={styles.icon}
-                    iconDirection="up"
+                    iconDirection="down"
                 />
                 <Box
                     outlined
                     color={getColor(3)}
                     icon="arrow"
                     className={styles.icon}
-                    iconDirection="down"
+                    iconDirection="up"
                 />
                 <Box
                     outlined
                     color={getColor(4)}
                     icon="arrow"
                     className={styles.icon}
-                    iconDirection="right"
+                    iconDirection="down"
                 />
                 <Box
                     outlined
                     color={getColor(5)}
                     icon="arrow"
                     className={styles.icon}
-                    iconDirection="left"
+                    iconDirection="right"
                 />
                 <Box
                     outlined
                     color={getColor(6)}
                     icon="arrow"
                     className={styles.icon}
-                    iconDirection="right"
+                    iconDirection="up"
                 />
                 <Box outlined color="pastelPink" icon="heart" className={styles.icon} />
                 <ConfettiFx
