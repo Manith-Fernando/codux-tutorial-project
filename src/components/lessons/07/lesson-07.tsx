@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import styles from './lesson-07.module.scss';
 import { Box } from '../../common/box/box';
-import { ConfettiFx } from '../../fx/confetti-fx/confetti-fx';
 import { Task07 as Task } from '../../tasks/07/task-07';
+import styles from './lesson-07.module.scss';
 
 // lesson solutions
 // unsolved: right, right, up, down, right, left, right
@@ -61,7 +60,6 @@ export const Lesson07 = () => {
                 }
             }, 405);
         }
-        // clear interval
         return () => clearInterval(animInterval);
     });
 
@@ -86,35 +84,35 @@ export const Lesson07 = () => {
                     color={getColor(1)}
                     icon="arrow"
                     className={styles.icon}
-                    iconDirection="right"
+                    iconDirection="down"
                 />
                 <Box
                     outlined
                     color={getColor(2)}
                     icon="arrow"
                     className={styles.icon}
-                    iconDirection="up"
+                    iconDirection="down"
                 />
                 <Box
                     outlined
                     color={getColor(3)}
                     icon="arrow"
                     className={styles.icon}
-                    iconDirection="down"
+                    iconDirection="left"
                 />
                 <Box
                     outlined
                     color={getColor(4)}
                     icon="arrow"
                     className={styles.icon}
-                    iconDirection="right"
+                    iconDirection="left"
                 />
                 <Box
                     outlined
                     color={getColor(5)}
                     icon="arrow"
                     className={styles.icon}
-                    iconDirection="left"
+                    iconDirection="right"
                 />
                 <Box
                     outlined
@@ -124,13 +122,6 @@ export const Lesson07 = () => {
                     iconDirection="right"
                 />
                 <Box outlined color="pastelPink" icon="heart" className={styles.icon} />
-                <ConfettiFx
-                    maxParticles={200}
-                    show={solutionStatus.solved}
-                    style={{
-                        display: solutionStatus.solved ? 'block' : 'none',
-                    }}
-                />
             </div>
         </div>
     );

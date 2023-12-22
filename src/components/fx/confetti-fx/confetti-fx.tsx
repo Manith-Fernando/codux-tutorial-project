@@ -27,12 +27,12 @@ const animationColors = [
     'orangeRed',
 ];
 
-export const ConfettiFx = ({
+export const ConfettiFx: React.FC<ConfettiFxProps> = ({
     show = false,
     dissolve = 200,
     maxParticles = 50,
     style,
-}: ConfettiFxProps) => {
+}) => {
     const refAnimationInstance = useRef<confetti.CreateTypes | null>(null);
     const getInstance: (confetti: confetti.CreateTypes | null) => void = (
         instance

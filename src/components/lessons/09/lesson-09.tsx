@@ -1,7 +1,5 @@
-import { useEffect, useState } from 'react';
 import type { ColorName } from '../../../globals/colors';
 import { Box } from '../../common/box/box';
-import { ConfettiFx } from '../../fx/confetti-fx/confetti-fx';
 import { Task09 as Task } from '../../tasks/09/task-09';
 import styles from './lesson-09.module.scss';
 
@@ -119,12 +117,6 @@ const boxes: ColorName[] = [
 ];
 
 export const Lesson09 = () => {
-    const [lessonSolved, setLessonSolved] = useState(false);
-
-    useEffect(() => {
-        setLessonSolved(isSolved());
-    }, []);
-
     return (
         <div className={styles.root}>
             <Task />
@@ -140,39 +132,7 @@ export const Lesson09 = () => {
                         />
                     ))}
                 </div>
-                <ConfettiFx
-                    maxParticles={400}
-                    dissolve={315}
-                    show={lessonSolved}
-                    style={{ display: lessonSolved ? 'block' : 'none' }}
-                />
             </div>
         </div>
     );
 };
-
-function isSolved(): boolean {
-    const pos = '445445';
-    const grid = getComputed('grid');
-    const isGrid = grid.getPropertyValue('display') === 'grid';
-    const gridCols = grid.getPropertyValue('grid-template-columns').split(' ').length;
-    const gridRows = grid.getPropertyValue('grid-template-rows').split(' ').length;
-
-    const glow = getComputed('glow');
-    const glowColPos =
-        glow.getPropertyValue('grid-column-start') + glow.getPropertyValue('grid-column-end');
-    const glowRowPos =
-        glow.getPropertyValue('grid-row-start') + glow.getPropertyValue('grid-row-end');
-
-    return (
-        isGrid &&
-        gridCols == 11 &&
-        gridRows == 10 &&
-        pos.indexOf(glowColPos) > -1 &&
-        pos.indexOf(glowRowPos) > -1
-    );
-}
-
-function getComputed(elem: string) {
-    return getComputedStyle(document.getElementById(elem)!);
-}
